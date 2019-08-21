@@ -44,6 +44,7 @@ function render(){
 }
 
 function beautifulRandomize(times) {
+  hideNumbers();
   let timesRun = 0;
   const interval = setInterval(function(){
       timesRun += 1;
@@ -56,7 +57,6 @@ function beautifulRandomize(times) {
 }
 
 function shuffle() {
-  console.log('shuffle');
   let currentIndex = data.length;
   let temporaryValue, randomIndex;
 
@@ -70,6 +70,13 @@ function shuffle() {
   }
 
   layout(false);
+}
+
+function hideNumbers() {
+  const	t = d3.transition().duration(animTime);
+
+  holder.selectAll('.index').transition(t)
+    .style('opacity', 0);
 }
 
 function showNumbers() {
