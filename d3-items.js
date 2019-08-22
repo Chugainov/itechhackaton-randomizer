@@ -25,8 +25,8 @@ const layoutInfo = {
   // ---- card position & size
   valueTop: function(d, i){return Math.floor(i/cardsPerRow)*90+'px'},
   indexTop: function(d, i){return 5 + Math.floor(i/cardsPerRow)*90+'px'},
-  indexLeft: function(d, i){return (i%cardsPerRow)*300 - 610 + 'px'},
-  valueLeft: function(d, i){return (i%cardsPerRow)*300 - 550 + 'px'},
+  indexLeft: function(d, i){return (i%cardsPerRow)*300 - 585 + 'px'},
+  valueLeft: function(d, i){return (i%cardsPerRow)*300 - 520 + 'px'},
   height: 80,
   width: 200,
   // ---- card border-radius
