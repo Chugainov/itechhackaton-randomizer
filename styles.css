@@ -9,15 +9,16 @@ body {
 }
 
 h1 {
-	margin-bottom: 20px;
+  font-size: 40px;
+	margin-bottom: 40px;
 }
 
 .button {
   background-color: #ed1c24;
   width: 200px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 18px;
+  height: 3em;
+  line-height: 3em;
+  font-size: 25px;
   font-weight: bold;
   letter-spacing: .1em;
   color: #FFFFFF;
@@ -37,20 +38,22 @@ h1 {
 	position: absolute;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 25px;
 }
 
 .index{
+  background: #ed1c24;
+  border-radius: 2em;
+  border: .3em solid white;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 25px;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
   opacity: 0;
   position: absolute;
-  font-weight: bold;
-  background: #ed1c24;
-  color: #FFFFFF;
-  height: 30px;
-  width: 30px;
-  line-height: 2em;
-  border: .3em solid white;
   text-align: center;
-  border-radius: 2em;
   transition: all 1s ease-out;
+  visibility: hidden;
 }

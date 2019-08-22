@@ -1,8 +1,9 @@
-const itemHeight = 35;
+const itemHeight = 80;
 const selector = '.holder';
 const animTime = 1000;
+const cardsPerRow = 4;
 
-const layoutInfo = {
+const layoutInfo1 = {
   // ---- row position & size
   valueTop: function(d, i){return i * (itemHeight + 1) + 'px'},
   indexTop: function(d, i){return (i * (itemHeight + 1)) - 10 + 'px'},
@@ -19,6 +20,28 @@ const layoutInfo = {
   valueLeft: -50,
   valueFontSize: 16,
 };
+
+const layoutInfo = {
+  // ---- card position & size
+  valueTop: function(d, i){return 43 + Math.floor(i/cardsPerRow)*90+'px'},
+  indexTop: function(d, i){return 25 + Math.floor(i/cardsPerRow)*90+'px'},
+  indexLeft: function(d, i){return (i%cardsPerRow)*360 - 680 + 'px'},
+  valueLeft: function(d, i){return (i%cardsPerRow)*360 - 610 + 'px'},
+  height: 80,
+  width: 350,
+  // ---- card border-radius
+  radius: '5px',
+  // ---- table header (hidden)
+  headerOpacity: 0,
+  headerLeft: -650,
+  // ---- line 1
+  c1Top: 10,
+  c1Left: 10,
+  c1FontSize: 18,
+  // ---- line 2
+  c2Top: 37,
+  c2Left: 10,
+}
 
 
 let holder;
@@ -82,12 +105,8 @@ function hideNumbers() {
 function showNumbers() {
   const	t = d3.transition().duration(animTime);
 
-  holder.selectAll('.item')
-		.data(data, function(d){return d.name})
-		.transition(t)
-		.style('left', layoutInfo.valueLeft + 10)
-
   holder.selectAll('.index').transition(t)
+    .style('visibility', 'visible')
     .style('opacity', 100);
 }
 
@@ -104,10 +123,12 @@ function layout(skipAnim){
     .style('border-radius', layoutInfo.radius);
     
   holder.selectAll('.index').transition(t)
+    .style('visibility', 'hidden')
     .style('top', layoutInfo.indexTop)
     .style('left', layoutInfo.indexLeft);
 
-  const totalHeight = 20 + data.length * (itemHeight + 1);
+  // const totalHeight = 20 + data.length * (itemHeight + 1);
+  const totalHeight = 110 + (data.length / cardsPerRow) * (itemHeight + 1);
 
   holder.transition(t)
     .style('height', totalHeight);
