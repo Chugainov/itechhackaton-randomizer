@@ -23,12 +23,12 @@ const layoutInfo1 = {
 
 const layoutInfo = {
   // ---- card position & size
-  valueTop: function(d, i){return 43 + Math.floor(i/cardsPerRow)*90+'px'},
-  indexTop: function(d, i){return 25 + Math.floor(i/cardsPerRow)*90+'px'},
-  indexLeft: function(d, i){return (i%cardsPerRow)*360 - 680 + 'px'},
-  valueLeft: function(d, i){return (i%cardsPerRow)*360 - 610 + 'px'},
+  valueTop: function(d, i){return Math.floor(i/cardsPerRow)*90+'px'},
+  indexTop: function(d, i){return 5 + Math.floor(i/cardsPerRow)*90+'px'},
+  indexLeft: function(d, i){return (i%cardsPerRow)*300 - 610 + 'px'},
+  valueLeft: function(d, i){return (i%cardsPerRow)*300 - 550 + 'px'},
   height: 80,
-  width: 350,
+  width: 200,
   // ---- card border-radius
   radius: '5px',
   // ---- table header (hidden)
