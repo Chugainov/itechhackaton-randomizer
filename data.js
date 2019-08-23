@@ -36,10 +36,6 @@ var data=[
     "order": 9,
   },
   {
-    "name": "Квазификсики v2.0",
-    "order": 10,
-  },
-  {
     "name": "Showstoppers",
     "order": 11,
   },
